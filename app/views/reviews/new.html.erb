@@ -1,14 +1,20 @@
 <% provide(:title, 'Write Review') %>
 <% provide(:button_text, 'Submit review') %>
 
+<% if @drink %>
 <div class="container">
   <div class="col-md-8">
-    <h1><%= @review.drink.name.capitalize %></h1>
+    <h1>Review <%= @drink.name.capitalize %></h1>
   </div>
 </div>
+<% else %>
+<h1>Write Review</h1>
+<% end %>
 
 
-<%= form_for(@review)do |f| %>
+
+
+<%= form_for([@drink, @review]) do |f| %>
 
   <%= render 'layouts/errors', object: f.object %>
 

@@ -11,8 +11,12 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @drink = Drink.find_by(params[:drink_id])
-    @review = @drink.reviews.build
+    if params[:drink_id] && @drink = Drink.find_by_id(params[:drink_id])
+      @review = @drink.reviews.build
+    else
+      flash.now[:danger] = "We don't have that booze!" if params[:drink_id]
+      @review = Review.new
+    end
   end
 
   # def show
