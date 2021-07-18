@@ -1,5 +1,5 @@
 class DrinksController < ApplicationController
-  before_action :login_required, only: [:index, :show, :edit, :update]
+  before_action :login_required
   def index
     @drinks = Drink.alpha
   end
@@ -9,15 +9,15 @@ class DrinksController < ApplicationController
   end
 
   def show
-    @drink = Drink.find(params[:id])
-    @reviews = @drink.reviews
+    drink_found
+    redirect_to drinks_path if !@drink
   end
 
   def create
-    @drink = current_user.drinks.build(drink_params(:name, :description))
+    @drink = current_user.drinks.build(drink_params(:name, :description, :rating))
     if @drink.save
       flash[:success] = "Added a new drink"
-      redirect_to @drink
+      redirect_to drinks_path
     else
       render :new
     end
@@ -27,5 +27,9 @@ class DrinksController < ApplicationController
 
   def drink_params(*args)
     params.require(:drink).permit(*args)
+  end
+
+  def drink_found
+    @drink = Drink.find(params[:id])
   end
 end

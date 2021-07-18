@@ -1,0 +1,6 @@
+<% @reviews.each do |dr| %>
+  <li>
+    <%= dr.content %>
+    <h6>Reviewed by <strong><%= dr.user.username %></strong></h6>
+  </li>
+<% end %>
