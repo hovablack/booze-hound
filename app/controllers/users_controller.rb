@@ -5,15 +5,11 @@ class UsersController < ApplicationController
   def index
     @users = User.all
   end
-
-  def show
-    user_found
-  end
-
+  
   def new
     @user = User.new
   end
-
+  
   def create
     @user = User.new(user_params(:username, :email, :password))
     if @user.save
@@ -24,8 +20,13 @@ class UsersController < ApplicationController
       render :new
     end
   end
+  
+  def show
+    user_found
+  end
 
   def edit
+    user_found
   end
 
   def update

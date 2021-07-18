@@ -1,0 +1,12 @@
+<% provide(:title, 'Boozes') %>
+<h1>Our Collection</h1>
+
+<div class="row">
+  <ul class="drinks">
+    <% @drinks.each do |d| %>
+      <li>
+        <h3><%= link_to d.name.capitalize, d %></h3>
+      </li>
+    <% end %>
+  </ul>
+</div>

@@ -8,8 +8,12 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
-  resources :reviews
-  resources :drinks
-  resources :users
+  resources :drinks do
+    resources :reviews, shallow: true
+  end
+  resources :reviews, only: [:show, :edit, :update, :destroy]
+  resources :users do
+    resources :drinks, shallow: true
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
