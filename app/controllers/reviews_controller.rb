@@ -27,7 +27,7 @@ class ReviewsController < ApplicationController
     @review = current_user.reviews.build(review_params(:drink_id, :content, :status))
     if @review.save
       flash[:success] = "Review created!"
-      redirect_to @review
+      redirect_to reviews_path
     else
       render :new
     end

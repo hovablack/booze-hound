@@ -24,6 +24,7 @@
   <%= f.label :status %>
   <%= f.select :status, ([" ", "Helpful", "Not Helpful"]), class: 'form-control' %>
 
+  <%= f.hidden_field :drink_id, class: 'form-control' %>
 
   <br>
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
