@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails Phase 3 Project
 
-Things you may want to cover:
+Overview:
 
-* Ruby version
+This a blog that allows you to create/add drinks and review them. You register for an account, and then you can add mostly alcoholic drinks/cocktails that you fancy, providing a brief description of the drink. You can then rate and review all drinks in the database.
 
-* System dependencies
+RUNNING THE PROGRAM:
 
-* Configuration
+* Fork & Clone
+- bundle install-
 
-* Database creation
+* Running the APP
+- rails s
 
-* Database initialization
+*Visit Webpage
+-http://127.0.0.1:3000/
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+License
+The gem is available as open source under the terms of the MIT License.

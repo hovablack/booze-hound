@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'contact', to: 'static_pages#contact'
 
   get 'auth/:provider/callback', to: 'sessions#omniauth'
-  get 'auth/failure', to: redirect('/')
+  # match 'auth/:provider/callback', to: 'auth#callback', via: [:get, :post]
   
   get 'register', to: 'users#new'
   get 'login', to: 'sessions#new'

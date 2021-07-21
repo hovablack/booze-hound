@@ -9,7 +9,7 @@
       </h1>
       <h1>
         <%= @user.email %>
-        <p><%= link_to "Edit my profile", edit_user_path(current_user) %></p>
+        <span><%= link_to "Edit my profile", edit_user_path(current_user) %></span>
       </h1>
     </section>
   </aside>
@@ -18,8 +18,7 @@
       <h3>
         <p><%= link_to "Add drink", new_drink_path %></p>
         <p><%= link_to "All drinks", drinks_path %></p>
-        <p><%= link_to "Review drink", drinks_path %></p>
-        <p><%= link_to "All reviews", '#' %></p>
+        <p><%= link_to "All reviews", reviews_path %></p>
       </h3>
     </section>
   </div>

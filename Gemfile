@@ -21,6 +21,13 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+# A generalized Rack framework for multiple-provider authentication
+gem 'omniauth', '~> 2.0', '>= 2.0.4'
+# Authenticate with Google via OAuth2 in OmniAuth
+gem 'omniauth-google-oauth2', '~> 1.0'
+# Autoload dotenv in Rails
+gem 'dotenv', '~> 2.7', '>= 2.7.6'
+gem 'omniauth-rails_csrf_protection'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
