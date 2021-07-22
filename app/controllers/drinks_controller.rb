@@ -1,7 +1,8 @@
 class DrinksController < ApplicationController
   before_action :login_required
+
   def index
-    @drinks = Drink.alpha
+    @drinks = Drink.all
   end
 
   def new

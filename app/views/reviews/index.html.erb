@@ -1,5 +1,6 @@
 <% @reviews.each do |dr| %>
   <li>
+    <%= link_to dr.drink.name.capitalize, dr.drink %>:
     <%= dr.content %>
     <h6>Reviewed by <strong><%= dr.user.username %></strong></h6>
   </li>
