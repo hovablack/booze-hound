@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :login_required
+  
 
   def index
     if params[:drink_id] && @drink = Drink.find_by_id(params[:drink_id])

@@ -1,8 +1,14 @@
 class DrinksController < ApplicationController
   before_action :login_required
+  
 
   def index
-    @drinks = Drink.all
+    if params[:user_id] && @user = User.find_by_id(params[:user_id])
+      @drinks = @user.drinks
+    else
+      flash.now[:danger] = "User has no booze!" if params[:user_id]
+      @drinks = Drink.all
+    end
   end
 
   def new
