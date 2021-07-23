@@ -15,9 +15,9 @@ class SessionsController < ApplicationController
 
   def omniauth
     @user = User.find_or_create_by(email: auth["info"]["email"]) do |u|
-      u.username= auth["info"]["name"]
-      u.image= auth["info"]["image"]
-      u.password= SecureRandom.hex(12)
+      u.username = auth["info"]["name"]
+      u.image = auth["info"]["image"]
+      u.password = SecureRandom.hex(12)
     end
     if @user.save
       log_in @user
@@ -27,7 +27,6 @@ class SessionsController < ApplicationController
       render :new
     end
   end
-
   
   def destroy
     log_out

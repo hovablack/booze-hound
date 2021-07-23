@@ -4,10 +4,11 @@ class DrinksController < ApplicationController
 
   def index
     if params[:user_id] && @user = User.find_by_id(params[:user_id])
-      @drinks = @user.drinks
+      @drinks = @user.drinks.alpha
     else
       flash.now[:danger] = "User has no booze!" if params[:user_id]
-      @drinks = Drink.all
+      # byebug
+      @drinks = Drink.alpha.where("name LIKE ?", "%#{params[:d]}%")
     end
   end
 

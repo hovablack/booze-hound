@@ -24,9 +24,9 @@ gem 'bcrypt', '~> 3.1.7'
 # A generalized Rack framework for multiple-provider authentication
 gem 'omniauth', '~> 2.0', '>= 2.0.4'
 # Authenticate with Google via OAuth2 in OmniAuth
-gem 'omniauth-google-oauth2', '~> 1.0'
+gem 'omniauth-google-oauth2'
 # Autoload dotenv in Rails
-gem 'dotenv', '~> 2.7', '>= 2.7.6'
+gem 'dotenv-rails'
 gem 'omniauth-rails_csrf_protection'
 
 # Use Active Storage variant

@@ -4,14 +4,14 @@ Rails.application.routes.draw do
   get 'contact', to: 'static_pages#contact'
 
   get 'auth/:provider/callback', to: 'sessions#omniauth'
-  # match 'auth/:provider/callback', to: 'auth#callback', via: [:get, :post]
+  get 'auth/failure', to: redirect('/')
   
   get 'register', to: 'users#new'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 
-  resources :reviews
+  resources :reviews, only: :index
   resources :users do
     resources :drinks, only: :index
   end
